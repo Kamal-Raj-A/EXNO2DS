@@ -51,6 +51,7 @@ dataset.describe()
 dataset.shape
 ```
 ![image](https://github.com/user-attachments/assets/f0cbab29-492b-460d-a481-cc058ac9fc89)
+# Categorical data analysis
 ```
 dataset.nunique()
 ```
@@ -81,6 +82,7 @@ dataset.rename(columns={'Sex':'Gender'},inplace=True)
 dataset
 ```
 ![image](https://github.com/user-attachments/assets/6acf7ffc-fa49-4a5e-8dc4-62912cf59047)
+#  Bivariate Analysis
 ```
 sns.catplot(x="Gender",col="Survived",kind="count",data=dataset,height=5,aspect=.7)
 ```
@@ -101,6 +103,7 @@ sns.scatterplot(x=dataset["Age"],y=dataset["Fare"])
 sns.jointplot(x="Age",y="Fare",data=dataset)
 ```
 ![image](https://github.com/user-attachments/assets/e2ca2ab0-d3c7-4613-87aa-766753da2171)
+# Multivariate Analysis
 ```
 fig = plt.figure(figsize=(8, 5))  # Create a figure with the desired size
 ax1 = fig.add_subplot(1, 1, 1)  # Add a subplot to the figure
@@ -112,6 +115,7 @@ plt.show()  # Display the plot
 sns.catplot(data=dataset,col="Survived",x="Gender",hue="Pclass",kind="count")
 ```
 ![image](https://github.com/user-attachments/assets/f6f6af71-b830-461e-a385-dde132e65437)
+#  Co-relation
 ```
 numeric_features = dataset.select_dtypes(include=np.number)
 corr = numeric_features.corr()
